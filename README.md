@@ -26,8 +26,9 @@ graph TD
 The model is trained using a manual implementation of **Logistic Regression** (no `scikit-learn` for the training loop, only using native NumPy matrix operations and Gradient Descent).
 
 ### Key Pipeline Steps:
-1. **Target Labelling**: Generates binary targets based on the humidity threshold:
 
+1. **Target Labelling**: Generates binary targets based on the humidity threshold of 55.0.
+   
 $$
 \text{Target} = \begin{cases} 
 1 & \text{if humidity} > 55.0 \\ 
@@ -35,16 +36,39 @@ $$
 \end{cases}
 $$
 
-2. **Feature Scaling (Z-Score Normalization)**:
+   Below is the plot of the raw input temperature and humidity data over all collected samples:
+   
+   ![Raw Sensor Data](images/raw_data_plot.png)
 
+2. **Feature Scaling (Z-Score Normalization)**:
+   
 $$
 X_{\text{scaled}} = \frac{X - \mu}{\sigma}
 $$
 
    - **Temperature**: $\mu = 35.9054$, $\sigma = 0.6874$
    - **Humidity**: $\mu = 58.1153$, $\sigma = 19.9401$
-3. **Model Weights ($\theta$)**: Learns coefficients using Gradient Descent over 3000 iterations ($\alpha = 0.1$).
-   - Learnt Weights: `[0.984221, -0.062587, 6.727087]` (Intercept, Temperature Coefficient, Humidity Coefficient).
+
+   Here is the visual representation of the scaled training data (features normalized around zero):
+   
+   ![Normalized Features](images/normalized_data_plot.png)
+
+3. **Cost Function (Binary Cross-Entropy Loss)**:
+   To evaluate model performance during training, we compute the cost at each iteration:
+   
+$$
+J(\theta) = -\frac{1}{m} \sum_{i=1}^{m} \left[ y^{(i)} \log(\hat{y}^{(i)}) + (1 - y^{(i)}) \log(1 - \hat{y}^{(i)}) \right]
+$$
+
+   *To prevent numerical instability, the predicted probabilities $\hat{y}$ are clipped to $[\epsilon, 1-\epsilon]$ (where $\epsilon = 10^{-15}$) before passing to the logarithm.*
+
+4. **Model Optimization & Gradient Descent**:
+   We optimize the parameters $\theta$ over 3000 iterations with a learning rate of $\alpha = 0.1$.
+   - **Learnt Weights ($\theta$)**: Intercept `0.984221`, Temperature `-0.062587`, Humidity `6.727087`.
+
+   Below is the loss curve showing the cost function values decreasing over training iterations, indicating successful gradient descent convergence:
+
+   ![Cost History Loss Curve](images/cost_history_plot.png)
 
 ---
 
