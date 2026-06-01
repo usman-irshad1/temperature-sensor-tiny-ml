@@ -27,14 +27,20 @@ The model is trained using a manual implementation of **Logistic Regression** (n
 
 ### Key Pipeline Steps:
 1. **Target Labelling**: Generates binary targets based on the humidity threshold:
-   $$
-   \text{Target} = \begin{cases} 
-   1 & \text{if humidity} > 55.0 \\ 
-   0 & \text{otherwise} 
-   \end{cases}
-   $$
+
+$$
+\text{Target} = \begin{cases} 
+1 & \text{if humidity} > 55.0 \\ 
+0 & \text{otherwise} 
+\end{cases}
+$$
+
 2. **Feature Scaling (Z-Score Normalization)**:
-   $$X_{\text{scaled}} = \frac{X - \mu}{\sigma}$$
+
+$$
+X_{\text{scaled}} = \frac{X - \mu}{\sigma}
+$$
+
    - **Temperature**: $\mu = 35.9054$, $\sigma = 0.6874$
    - **Humidity**: $\mu = 58.1153$, $\sigma = 19.9401$
 3. **Model Weights ($\theta$)**: Learns coefficients using Gradient Descent over 3000 iterations ($\alpha = 0.1$).
