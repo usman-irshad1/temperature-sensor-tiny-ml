@@ -1,7 +1,7 @@
 # TinyML Temperature & Humidity Respiration Spike Detector
 
-[![Python](https://img.shields.io/badge/Python-3.8%2B%20%7C%20NumPy-blue?style=flat-square)]()
-[![Platform](https://img.shields.io/badge/Edge_Target-ESP32%20%7C%20Arduino-00979D?style=flat-square)]()
+![Python](https://img.shields.io/badge/Python-3.8%2B%20%7C%20NumPy-blue?style=flat-square)
+![Platform](https://img.shields.io/badge/Edge_Target-ESP32%20%7C%20Arduino-00979D?style=flat-square)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](LICENSE)
 
 An educational end-to-end **TinyML edge inference demonstration** that trains a Logistic Regression classifier from scratch in Python (using only NumPy matrix operations) and deploys the learned weights directly onto an ESP32/Arduino microcontroller connected to a **DHT11 temperature and humidity sensor**.
