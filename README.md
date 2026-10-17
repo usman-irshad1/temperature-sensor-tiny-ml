@@ -15,9 +15,9 @@ graph TD
 
 ## Repository Structure
 
-- **[Humidty_sesnor_tiny_ml.ino](file:///C:/Users/usman/Desktop/VSCODE/Python/Temperature_sensor_tiny_ml/Humidty_sesnor_tiny_ml.ino)**: Arduino/ESP32 sketch containing the inference code, sigmoid function, data scaling logic, and hardcoded weights.
-- **[Tiny_ml_training_code.ipynb](file:///C:/Users/usman/Desktop/VSCODE/Python/Temperature_sensor_tiny_ml/Tiny_ml_training_code.ipynb)**: Jupyter Notebook for data preprocessing, normalization, manual logistic regression training, and accuracy verification.
-- **[sensor_data.csv](file:///C:/Users/usman/Desktop/VSCODE/Python/Temperature_sensor_tiny_ml/sensor_data.csv)**: Training dataset containing temperature and humidity readings.
+- **[`Humidty_sesnor_tiny_ml.ino`](Humidty_sesnor_tiny_ml.ino)**: Arduino/ESP32 sketch containing the inference code, sigmoid function, data scaling logic, and hardcoded weights.
+- **[`Tiny_ml_training_code.ipynb`](Tiny_ml_training_code.ipynb)**: Jupyter Notebook for data preprocessing, normalization, manual logistic regression training, and accuracy verification.
+- **[`sensor_data.csv`](sensor_data.csv)**: Training dataset containing temperature and humidity readings.
 
 ---
 
@@ -115,4 +115,4 @@ The learned parameters are embedded directly into the C++ code to run prediction
 
 ## License
 
-This project is open-source and available under the MIT License.
+This project is open-source and available under the [MIT License](LICENSE).
